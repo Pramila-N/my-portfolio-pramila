@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pramila N - Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Particles Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-md z-50 border-b border-blue-500/20">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">
+                    &lt;Pramila N/&gt;
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-slate-300 hover:text-blue-400 font-medium">About</a>
+                    <a href="#education" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Education</a>
+                    <a href="#skills" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Skills</a>
+                    <a href="#certifications" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Certifications</a>
+                    <a href="#experience" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Experience</a>
+                    <a href="#projects" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Projects</a>
+                    <a href="#contact" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-slate-300" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <div class="text-blue-400 text-lg mb-4 font-medium">Hello, I'm</div>
+                <h1 class="text-5xl lg:text-7xl font-bold mb-6">
+                    <span class="gradient-text typing-cursor" id="typed-name">Pramila N</span>
+                </h1>
+                <h2 class="text-2xl lg:text-3xl text-slate-300 mb-6">
+                    Information Technology Student & Developer
+                </h2>
+                <p class="text-slate-400 text-lg mb-8 max-w-xl leading-relaxed">
+                    Passionate Information Technology student with hands-on internship experience in Python development, 
+                    Power BI analytics, and frontend development. Ready to create innovative solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://drive.google.com/uc?export=download&id=1kni9OV2x_viZNxXh2KLRXt3NjmtnKnjV" class="glow-button text-white px-8 py-4 rounded-lg font-semibold text-lg neon-glow inline-block text-center">
+                        📄 Download Resume
+                    </a>
+                    <button onclick="scrollToSection('contact')" class="border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition-all duration-300">
+                        Let's Connect
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Profile Photo -->
+            <div class="fade-in">
+                <div class="relative">
+                    <div class="w-80 h-80 mx-auto rounded-full overflow-hidden shadow-2xl neon-glow border-4 border-blue-500/30">
+                        <img src="https://lh3.googleusercontent.com/d/1G_I8E91RKDRtIziD0MyFWp17G_CJh4Ck"
+     alt="Pramila N - Profile Photo" 
+     class="w-full h-full object-cover"
+     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-6xl font-bold" style="display: none;">
+                            PN
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center text-2xl floating">
+                        💻
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-xl floating" style="animation-delay: -2s;">
+                        🚀
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gradient-text mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-8"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="fade-in text-center">
+                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                        I'm a passionate Information Technology student with hands-on internship experience in Python development, 
+                        Power BI analytics, and frontend development. I thrive on solving complex problems and building 
+                        applications that make a real impact.
+                    </p>
+                    <p class="text-slate-300 text-lg mb-10 leading-relaxed">
+                        With industry certifications from HackerRank, along with real-world project experience, 
+                        I'm equipped with both theoretical knowledge and practical skills. I'm always eager to learn new technologies 
+                        and contribute to innovative projects.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-8 mb-10">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold gradient-text mb-2">3</div>
+                            <div class="text-slate-400 font-medium">Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold gradient-text mb-2">3</div>
+                            <div class="text-slate-400 font-medium">Internships</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold gradient-text mb-2">4</div>
+                            <div class="text-slate-400 font-medium">Certifications</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coding Platforms -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-200 mb-6">Find me on:</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+                            <a href="https://www.linkedin.com/in/pramila-n-a23079299/" target="_blank" class="bg-slate-800 p-4 rounded-lg text-center hover:bg-teal-500/20 transition-colors border border-slate-700 hover:border-teal-500">
+                                <svg class="w-8 h-8 mx-auto mb-2" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                <div class="text-sm text-slate-400">LinkedIn</div>
+                            </a>
+                            <a href="https://github.com/Pramila-N" target="_blank" class="bg-slate-800 p-4 rounded-lg text-center hover:bg-teal-500/20 transition-colors border border-slate-700 hover:border-teal-500">
+                                <svg class="w-8 h-8 mx-auto mb-2" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                <div class="text-sm text-slate-400">GitHub</div>
+                            </a>
+                            <a href="https://www.hackerrank.com/profile/npramila2006" target="_blank" class="bg-slate-800 p-4 rounded-lg text-center hover:bg-teal-500/20 transition-colors border border-slate-700 hover:border-teal-500">
+                                <svg class="w-8 h-8 mx-auto mb-2" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.737.908-1.454.609l-4.551-1.942-2.199 2.122c-.242.235-.445.356-.850.356l.307-4.998 8.36-7.566c.365-.327-.079-.508-.571-.158l-10.326 6.5-4.438-1.354c-.966-.297-.983-.966.202-1.408l16.935-6.5a1.004 1.004 0 011.21 1.839z"/>
+                                </svg>
+                                <div class="text-sm text-slate-400">HackerRank</div>
+                            </a>
+                            <a href="https://leetcode.com/u/npramila2006/" target="_blank" class="bg-slate-800 p-4 rounded-lg text-center hover:bg-teal-500/20 transition-colors border border-slate-700 hover:border-teal-500">
+                                <svg class="w-8 h-8 mx-auto mb-2" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.38 1.38 0 0 0 0 1.9l3.854 4.125 5.406 5.788a1.38 1.38 0 0 0 1.922 0l5.405-5.788 3.856-4.125a1.38 1.38 0 0 0 0-1.9l-3.856-4.125L14.444.438a1.375 1.375 0 0 0-.961-.438zM7.22 8.854l3.155-3.373 3.155 3.373-3.155 3.373-3.155-3.373zm8.56 0l3.155 3.373-3.155 3.373-3.155-3.373 3.155-3.373zm-4.28 4.579l3.155 3.373-3.155 3.373-3.155-3.373 3.155-3.373z"/>
+                                </svg>
+                                <div class="text-sm text-slate-400">LeetCode</div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating decorative elements -->
+                    <div class="relative mt-12">
+                        <div class="absolute -top-8 left-1/4 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-xl floating">
+                            💡
+                        </div>
+                        <div class="absolute -top-4 right-1/4 w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-lg floating" style="animation-delay: -2s;">
+                            🚀
+                        </div>
+                        <div class="absolute -bottom-4 left-1/3 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-sm floating" style="animation-delay: -4s;">
+                            ⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Education</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-8"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    My academic journey and achievements
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <!-- B.Tech Information Technology -->
+                    <div class="card-hover rounded-xl p-8 fade-in">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-slate-200 mb-1">B.Tech Information Technology</h3>
+                                <p class="text-teal-400 font-medium">Bannari Amman Institute of Technology</p>
+                                <p class="text-slate-400">Sathyamangalam, Erode</p>
+                            </div>
+                            <div class="mt-2 md:mt-0 text-right">
+                                <div class="text-xl font-bold gradient-text">8.87 CGPA</div>
+                                <p class="text-slate-400">2023 - 2027</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Currently pursuing Bachelor's degree in Information Technology with a focus on software development, data analytics, and web technologies.</p>
+                    </div>
+                    
+                    <!-- 12th Standard -->
+                    <div class="card-hover rounded-xl p-8 fade-in">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-slate-200 mb-1">12th Standard</h3>
+                                <p class="text-teal-400 font-medium">Arumugam Academy Matric Higher Secondary School</p>
+                                <p class="text-slate-400">Aravakurichi, Karur</p>
+                            </div>
+                            <div class="mt-2 md:mt-0 text-right">
+                                <div class="text-xl font-bold gradient-text">96%</div>
+                                <p class="text-slate-400">2022 - 2023</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Completed Higher Secondary with Computer Science as the major subject, achieving excellent academic performance.</p>
+                    </div>
+                    
+                    <!-- 10th Standard -->
+                    <div class="card-hover rounded-xl p-8 fade-in">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-slate-200 mb-1">10th Standard</h3>
+                                <p class="text-teal-400 font-medium">Hajee Meera Academy Model Matriculation School</p>
+                                <p class="text-slate-400">Esanatham, Karur</p>
+                            </div>
+                            <div class="mt-2 md:mt-0 text-right">
+                                <div class="text-xl font-bold gradient-text">100%</div>
+                                <p class="text-slate-400">2020 - 2021</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300">Completed Secondary Education with perfect score, demonstrating strong academic foundation and dedication to excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Technical Skills</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-8"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Technologies and tools I work with across different domains
+                </p>
+            </div>
+            
+            <!-- Frontend Skills -->
+            <div class="mb-12 fade-in">
+                <h3 class="text-2xl font-semibold gradient-text mb-6 text-center">Frontend Development</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🌐</div>
+                        <h4 class="text-lg font-semibold text-slate-200">HTML</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🎨</div>
+                        <h4 class="text-lg font-semibold text-slate-200">CSS</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">⚡</div>
+                        <h4 class="text-lg font-semibold text-slate-200">JavaScript</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">⚛️</div>
+                        <h4 class="text-lg font-semibold text-slate-200">React</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="mb-12 fade-in">
+                <h3 class="text-2xl font-semibold gradient-text mb-6 text-center">Backend Development</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🐍</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Python</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">☕</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Java</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🟢</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Node.js</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">⚡</div>
+                        <h4 class="text-lg font-semibold text-slate-200">C</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database Skills -->
+            <div class="mb-12 fade-in">
+                <h3 class="text-2xl font-semibold gradient-text mb-6 text-center">Database & Analytics</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🗄️</div>
+                        <h4 class="text-lg font-semibold text-slate-200">SQL</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🍃</div>
+                        <h4 class="text-lg font-semibold text-slate-200">MongoDB</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">📈</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Power BI</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">📊</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Analytics</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="mb-12 fade-in">
+                <h3 class="text-2xl font-semibold gradient-text mb-6 text-center">Frameworks & Libraries</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">⚛️</div>
+                        <h4 class="text-lg font-semibold text-slate-200">React.js</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🟢</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Express.js</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🎨</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Tailwind CSS</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="fade-in">
+                <h3 class="text-2xl font-semibold gradient-text mb-6 text-center">Development Tools</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🐙</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Git</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">💻</div>
+                        <h4 class="text-lg font-semibold text-slate-200">GitHub</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🔧</div>
+                        <h4 class="text-lg font-semibold text-slate-200">VS Code</h4>
+                    </div>
+                    <div class="card-hover rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-3">🎯</div>
+                        <h4 class="text-lg font-semibold text-slate-200">Postman</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section with Sliding Animation -->
+    <section id="certifications" class="section-padding bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Certifications</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-8"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Industry-recognized certifications validating my technical expertise
+                </p>
+            </div>
+            
+            <!-- Sliding Certifications Container -->
+            <div class="slider-container">
+                <div class="slider-track">
+                    <!-- First set of certificates -->
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏆
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">Python (Basic)</h3>
+                                <p class="text-teal-400 font-medium text-sm">HackerRank</p>
+                                <p class="text-slate-400 text-xs">Issued: 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Certified in Python programming fundamentals, data structures, and basic problem-solving skills.</p>
+                        <button onclick="showCertificate('python-certificate')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏆
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">SQL (Basic)</h3>
+                                <p class="text-teal-400 font-medium text-sm">HackerRank</p>
+                                <p class="text-slate-400 text-xs">Issued: 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Mastered basic SQL queries, database operations, and data retrieval fundamentals.</p>
+                        <button onclick="showCertificate('sql')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏆
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">Java (Basic)</h3>
+                                <p class="text-teal-400 font-medium text-sm">HackerRank</p>
+                                <p class="text-slate-400 text-xs">Issued: 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Certified in Java programming fundamentals, object-oriented programming concepts, and basic algorithms.</p>
+                        <button onclick="showCertificate('java')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏆
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">Frontend Developer (React)</h3>
+                                <p class="text-teal-400 font-medium text-sm">HackerRank</p>
+                                <p class="text-slate-400 text-xs">Issued: 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Certified in React fundamentals, component architecture, hooks, and modern frontend development practices.</p>
+                        <button onclick="showCertificate('react')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏆
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">Python (Basic)</h3>
+                                <p class="text-teal-400 font-medium text-sm">HackerRank</p>
+                                <p class="text-slate-400 text-xs">Issued: 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Certified in Python programming fundamentals, data structures, and basic problem-solving skills.</p>
+                        <button onclick="showCertificate('python-certificate')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏆
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">SQL (Basic)</h3>
+                                <p class="text-teal-400 font-medium text-sm">HackerRank</p>
+                                <p class="text-slate-400 text-xs">Issued: 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Mastered basic SQL queries, database operations, and data retrieval fundamentals.</p>
+                        <button onclick="showCertificate('sql')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏆
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">Java (Basic)</h3>
+                                <p class="text-teal-400 font-medium text-sm">HackerRank</p>
+                                <p class="text-slate-400 text-xs">Issued: 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Certified in Java programming fundamentals, object-oriented programming concepts, and basic algorithms.</p>
+                        <button onclick="showCertificate('java')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏆
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">Frontend Developer (React)</h3>
+                                <p class="text-teal-400 font-medium text-sm">HackerRank</p>
+                                <p class="text-slate-400 text-xs">Issued: 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Certified in React fundamentals, component architecture, hooks, and modern frontend development practices.</p>
+                        <button onclick="showCertificate('react')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+                     <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🏛️
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">Oracle Cloud Infrastructure - Foundations</h3>
+                                <p class="text-teal-400 font-medium text-sm">Oracle</p>
+                                <p class="text-slate-400 text-xs">Issued: 2025</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Foundational knowledge of Oracle Cloud Infrastructure core services and cloud concepts.</p>
+                        <button onclick="showCertificate('oci-foundations')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+                     <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🤖
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">OCI AI Foundations Associate</h3>
+                                <p class="text-teal-400 font-medium text-sm">Oracle</p>
+                                <p class="text-slate-400 text-xs">Issued: 2025</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Introductory certification covering AI and ML services and capabilities on Oracle Cloud.</p>
+                        <button onclick="showCertificate('oci-ai-foundations')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+                    <div class="cert-card card-hover rounded-xl p-6">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                                🗄️
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-200 mb-1">Oracle Data Platform - Foundations</h3>
+                                <p class="text-teal-400 font-medium text-sm">Oracle</p>
+                                <p class="text-slate-400 text-xs">Issued: 2025</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-4">Covers core data platform concepts and Oracle data services available on OCI.</p>
+                        <button onclick="showCertificate('oracle-data-platform')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                            📜 View Certificate
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+            
+            <div class="text-center mt-8 fade-in">
+                <p class="text-slate-400 text-sm">💡 Hover over the certificates to pause the animation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Internship Experience</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-8"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Real-world experience gained through hands-on internships
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend & Python Developer Internship -->
+                <div class="card-hover rounded-xl p-8 fade-in">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                            💻
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-slate-200 mb-2">Python Developer Intern</h3>
+                            <p class="text-teal-400 font-medium mb-1">Infotact Solutions</p>
+                            <p class="text-slate-400 text-sm">December 2024 - February 2025 • 3 months</p>
+                        </div>
+                    </div>
+                    <ul class="text-slate-300 space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Developed a comprehensive currency converter application using Python
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Implemented GUI interface using Tkinter for user-friendly experience
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Integrated real-time exchange rate APIs for accurate conversions
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Applied Python programming best practices and error handling
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30">Python</span>
+                        <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30">Tkinter</span>
+                        <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/30">API Integration</span>
+                        <span class="bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm border border-orange-500/30">GUI Development</span>
+                    </div>
+                    <button onclick="showCertificate('python-internship')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                        📜 View Certificate
+                    </button>
+                </div>
+
+                <!-- Power BI Intern -->
+                <div class="card-hover rounded-xl p-8 fade-in">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                            📊
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-slate-200 mb-2">Power BI Analytics Intern</h3>
+                            <p class="text-teal-400 font-medium mb-1">Coginfyz Technologies</p>
+                            <p class="text-slate-400 text-sm">April 2025 • 1 month</p>
+                        </div>
+                    </div>
+                    <ul class="text-slate-300 space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Completed comprehensive data analysis tasks using Power BI
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Created interactive dashboards and data visualizations
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Performed data cleaning and transformation processes
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Analyzed business data to derive meaningful insights
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/30">Power BI</span>
+                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30">SQL</span>
+                        <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30">Data Analysis</span>
+                        <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/30">Power Query</span>
+                    </div>
+                    <button onclick="showCertificate('powerbi')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                        📜 View Certificate
+                    </button>
+                </div>
+
+                <!-- Frontend Developer Internship -->
+                <div class="card-hover rounded-xl p-8 fade-in">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                            🌐
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-slate-200 mb-2">Frontend Developer Intern</h3>
+                            <p class="text-teal-400 font-medium mb-1">Edunet Foundation IBM SkillsBuild</p>
+                            <p class="text-slate-400 text-sm">Current • AICTE Program</p>
+                        </div>
+                    </div>
+                    <ul class="text-slate-300 space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Currently working on frontend development projects
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Developing responsive web applications using modern technologies
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Collaborating with IBM SkillsBuild platform for skill enhancement
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-400 mr-3 mt-1">▶</span>
+                            Participating in AICTE-sponsored professional development program
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm border border-orange-500/30">HTML/CSS</span>
+                        <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/30">JavaScript</span>
+                        <span class="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm border border-cyan-500/30">React</span>
+                        <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30">Web Development</span>
+                    </div>
+                    <button onclick="showCertificate('frontend')" class="bg-teal-500/20 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg font-medium hover:bg-teal-500/30 transition-colors">
+                        📜 View Certificate
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-8"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Showcasing my technical skills through real-world applications
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Currency Converter -->
+                <div class="project-card card-hover rounded-xl overflow-hidden fade-in relative">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-500 relative flex items-center justify-center">
+                        <div class="text-6xl text-white">💱</div>
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h4 class="text-xl font-semibold mb-4">Currency Converter</h4>
+                                <a href="https://lnkd.in/p/gs7pAWH4" target="_blank" class="glow-button text-white px-6 py-2 rounded-lg font-semibold">
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-200 mb-2">Currency Converter</h3>
+                        <p class="text-slate-400 mb-4">A GUI-based currency converter application built with Python using Tkinter for the interface and real-time exchange rate APIs</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30">Python</span>
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30">Tkinter</span>
+                            <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/30">API</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Alumni Connect -->
+                <div class="project-card card-hover rounded-xl overflow-hidden fade-in relative">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 relative flex items-center justify-center">
+                        <div class="text-6xl text-white">🎓</div>
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h4 class="text-xl font-semibold mb-4">Alumni Connect</h4>
+                                <a href="https://github.com/Kamali-R/alumni-connect" target="_blank" class="glow-button text-white px-6 py-2 rounded-lg font-semibold">
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-200 mb-2">Alumni Connect Platform</h3>
+                        <p class="text-slate-400 mb-4">A web platform connecting current students with alumni for mentorship, networking, and career guidance</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm border border-orange-500/30">HTML</span>
+                            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30">CSS</span>
+                            <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm border border-yellow-500/30">JavaScript</span>
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30">MongoDB</span>
+                            <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/30">React</span>
+                            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30">Node</span>
+                            <span class="bg-pink-500/20 text-pink-400 px-3 py-1 rounded-full text-sm border border-pink-500/30">Express</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Project -->
+                <div class="project-card card-hover rounded-xl overflow-hidden fade-in relative">
+                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-cyan-500 relative flex items-center justify-center">
+                        <div class="text-6xl text-white">📊</div>
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h4 class="text-xl font-semibold mb-4">Analytics Dashboard</h4>
+                                <a href="https://lnkd.in/p/g-3V-Xtd" target="_blank" class="glow-button text-white px-6 py-2 rounded-lg font-semibold">
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-200 mb-2">Data Analytics Dashboard</h3>
+                        <p class="text-slate-400 mb-4">An interactive analytics dashboard for visualizing and analyzing business data with various charts and insights</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30">Python</span>
+                            <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm border border-purple-500/30">Power BI</span>
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30">SQL</span>
+                            <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm border border-red-500/30">Data Vizualization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Let's Connect</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto mb-8"></div>
+                <p class="text-slate-400 text-xl mb-12 max-w-2xl mx-auto">
+                    Ready to bring fresh ideas and technical expertise to your team. Let's discuss how I can contribute to your next project!
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-teal-500/20 border border-teal-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-200 mb-2">Email</h3>
+                        <p class="text-slate-400">npramila2006@gmail.com</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-teal-500/20 border border-teal-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-200 mb-2">Location</h3>
+                        <p class="text-slate-400">Chennai, India</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-teal-500/20 border border-teal-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-200 mb-2">Phone</h3>
+                        <p class="text-slate-400">+91 9360184158</p>
+                    </div>
+                </div>
+                
+                <div class="card-hover rounded-2xl p-8 max-w-2xl mx-auto mb-12">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors">
+                            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors">
+                        </div>
+                        <input type="text" name="subject" placeholder="Subject" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors">
+                        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors resize-none"></textarea>
+                        <button type="submit" class="w-full glow-button text-white py-3 rounded-lg font-semibold text-lg">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="contact-status" class="hidden mt-4 p-4 rounded-lg"></div>
+                </div>
+                
+                <!-- Social Links -->
+               <!-- Social Links -->
+<div class="flex justify-center space-x-6">
+    <a href="https://www.linkedin.com/in/pramila-n-a23079299/" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+    </a>
+    <a href="https://github.com/Pramila-N" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+    </a>
+    <a href="https://www.hackerrank.com/profile/npramila2006" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.737.908-1.454.609l-4.551-1.942-2.199 2.122c-.242.235-.445.356-.85.356l.307-4.998 8.36-7.566c.365-.327-.079-.508-.571-.158l-10.326 6.5-4.438-1.354c-.966-.297-.983-.966.202-1.408l16.935-6.5a1.004 1.004 0 011.21 1.839z"/>
+        </svg>
+    </a>
+    <a href="https://leetcode.com/u/npramila2006/" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.38 1.38 0 0 0 0 1.9l3.854 4.125 5.406 5.788a1.38 1.38 0 0 0 1.922 0l5.405-5.788 3.856-4.125a1.38 1.38 0 0 0 0-1.9l-3.856-4.125L14.444.438a1.375 1.375 0 0 0-.961-.438zM7.22 8.854l3.155-3.373 3.155 3.373-3.155 3.373-3.155-3.373zm8.56 0l3.155 3.373-3.155 3.373-3.155-3.373 3.155-3.373zm-4.28 4.579l3.155 3.373-3.155 3.373-3.155-3.373 3.155-3.373z"/>
+        </svg>
+    </a>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md极狐 :mb-0">
+                    <div class="text-2xl font-bold gradient-text mb-2">
+                        &lt;Pramila N/&gt;
+                    </div>
+                    <p class="text-slate-400">Information Technology Student & Developer</p>
+                </div>
+                <div class="text-slate-400 text-center md:text-right">
+                    <p>&copy; 2024 Pramila N. All rights reserved.</p>
+                    <p class="text-sm mt-1">Built with passion and modern web technologies</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
