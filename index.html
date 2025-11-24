@@ -5,7 +5,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pramila N - Software Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary-blue: #3b82f6;
+            --neon-purple: #8b5cf6;
+            --dark-bg: #0f0f23;
+            --card-bg: #1a1a2e;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .neon-glow:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            background: var(--card-bg);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-blue);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .typing-cursor {
+            border-right: 3px solid var(--primary-blue);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { border-color: var(--primary-blue); }
+            51%, 100% { border-color: transparent; }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary-blue), var(--neon-purple));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .project-overlay {
+            background: linear-gradient(45deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .glow-button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--neon-purple));
+            transition: all 0.3s ease;
+        }
+
+        .glow-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: var(--primary-blue);
+        }
+
+        .section-padding {
+            padding: 120px 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            animation: particle-float 8s linear infinite;
+        }
+
+        @keyframes particle-float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Sliding Certifications Animation */
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+            -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+        }
+
+        .slider-track {
+            display: flex;
+            animation: slide 25s linear infinite;
+            width: calc(200% + 2rem);
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .cert-card {
+            flex: 0 0 320px;
+            margin-right: 1.5rem;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .slider-track {
+                animation: slide 15s linear infinite;
+            }
+            
+            .cert-card {
+                flex: 0 0 280px;
+                margin-right: 1rem;
+            }
+            
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(10px);
+                z-index: 40;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            }
+            
+            .mobile-menu a {
+                display: block;
+                padding: 12px 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .mobile-menu a:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-track {
+                animation: slide 12s linear infinite;
+            }
+            
+            .cert-card {
+                flex: 0 0 260px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Animated Particles Background -->
@@ -28,6 +243,8 @@
                 <div class="text-2xl font-bold gradient-text">
                     &lt;Pramila N/&gt;
                 </div>
+
+                <!-- Desktop menu -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Home</a>
                     <a href="#about" class="nav-link text-slate-300 hover:text-blue-400 font-medium">About</a>
@@ -38,17 +255,31 @@
                     <a href="#projects" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Projects</a>
                     <a href="#contact" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Contact</a>
                 </div>
-                <button class="md:hidden text-slate-300" id="mobile-menu-btn">
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-slate-300 z-60" id="mobile-menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+                <a href="#home" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Home</a>
+                <a href="#about" class="nav-link text-slate-300 hover:text-blue-400 font-medium">About</a>
+                <a href="#education" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Education</a>
+                <a href="#skills" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Skills</a>
+                <a href="#certifications" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Certifications</a>
+                <a href="#experience" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Experience</a>
+                <a href="#projects" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Projects</a>
+                <a href="#contact" class="nav-link text-slate-300 hover:text-blue-400 font-medium">Contact</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
             <div class="fade-in">
                 <div class="text-blue-400 text-lg mb-4 font-medium">Hello, I'm</div>
@@ -868,29 +1099,28 @@
                 </div>
                 
                 <!-- Social Links -->
-               <!-- Social Links -->
-<div class="flex justify-center space-x-6">
-    <a href="https://www.linkedin.com/in/pramila-n-a23079299/" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-    </a>
-    <a href="https://github.com/Pramila-N" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-        </svg>
-    </a>
-    <a href="https://www.hackerrank.com/profile/npramila2006" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.737.908-1.454.609l-4.551-1.942-2.199 2.122c-.242.235-.445.356-.85.356l.307-4.998 8.36-7.566c.365-.327-.079-.508-.571-.158l-10.326 6.5-4.438-1.354c-.966-.297-.983-.966.202-1.408l16.935-6.5a1.004 1.004 0 011.21 1.839z"/>
-        </svg>
-    </a>
-    <a href="https://leetcode.com/u/npramila2006/" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.38 1.38 0 0 0 0 1.9l3.854 4.125 5.406 5.788a1.38 1.38 0 0 0 1.922 0l5.405-5.788 3.856-4.125a1.38 1.38 0 0 0 0-1.9l-3.856-4.125L14.444.438a1.375 1.375 0 0 0-.961-.438zM7.22 8.854l3.155-3.373 3.155 3.373-3.155 3.373-3.155-3.373zm8.56 0l3.155 3.373-3.155 3.373-3.155-3.373 3.155-3.373zm-4.28 4.579l3.155 3.373-3.155 3.373-3.155-3.373 3.155-3.373z"/>
-        </svg>
-    </a>
-</div>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/pramila-n-a23079299/" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/Pramila-N" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/npramila2006" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.737.908-1.454.609l-4.551-1.942-2.199 2.122c-.242.235-.445.356-.850.356l.307-4.998 8.36-7.566c.365-.327-.079-.508-.571-.158l-10.326 6.5-4.438-1.354c-.966-.297-.983-.966.202-1.408l16.935-6.5a1.004 1.004 0 011.21 1.839z"/>
+                        </svg>
+                    </a>
+                    <a href="https://leetcode.com/u/npramila2006/" target="_blank" class="social-icon text-slate-400 hover:text-teal-400">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a1.38 1.38 0 0 0 0 1.9l3.854 4.125 5.406 5.788a1.38 1.38 0 0 0 1.922 0l5.405-5.788 3.856-4.125a1.38 1.38 0 0 0 0-1.9l-3.856-4.125L14.444.438a1.375 1.375 0 0 0-.961-.438zM7.22 8.854l3.155-3.373 3.155 3.373-3.155 3.373-3.155-3.373zm8.56 0l3.155 3.373-3.155 3.373-3.155-3.373 3.155-3.373zm-4.28 4.579l3.155 3.373-3.155 3.373-3.155-3.373 3.155-3.373z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -899,7 +1129,7 @@
     <footer class="bg-slate-900 border-t border-slate-800 py-12">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md极狐 :mb-0">
+                <div class="mb-6 md:mb-0">
                     <div class="text-2xl font-bold gradient-text mb-2">
                         &lt;Pramila N/&gt;
                     </div>
@@ -913,6 +1143,194 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for navigation
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu after clicking
+            closeMobileMenu();
+        }
+
+        // Close mobile menu function
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            
+            if (!menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Update active navigation link
+        function updateActiveNav() {
+            const sections = ['home', 'about', 'education', 'skills', 'certifications', 'experience', 'projects', 'contact'];
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach((sectionId, index) => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        if (navLinks[index]) {
+                            navLinks[index].classList.add('active');
+                        }
+                    }
+                }
+            });
+        }
+
+        // Fade in animation on scroll
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight - 100;
+                
+                if (isVisible) {
+                    element.classList.add('visible');
+                } else {
+                    // Reset animation when element goes out of view
+                    element.classList.remove('visible');
+                }
+            });
+        }
+
+        // Show certificate function
+        function showCertificate(type) {
+            let url = '';
+            
+            switch(type) {
+                case 'python-certificate':
+                    url = 'https://www.hackerrank.com/certificates/6a5b480b85b5';
+                    break;
+                case 'python-internship':
+                    url = 'https://drive.google.com/file/d/1m00fY9B-EFrU2uE7hlWoL96ouXNlN4Vu/view?usp=sharing';
+                    break;
+                case 'powerbi':
+                    url = 'https://drive.google.com/file/d/107g1tuGiLruIZVoVFzZy_HTK6YGyL9Af/view?usp=sharing';
+                    break;
+                case 'frontend':
+                    url = 'https://drive.google.com/file/d/1lvRR292VhDMRBMB9ebSry6HaRvBMCKXw/view?usp=sharing';
+                    break;
+                case 'sql':
+                    url = 'https://www.hackerrank.com/certificates/6b50dab71e86';
+                    break;
+                case 'java':
+                    url = 'https://www.hackerrank.com/certificates/41b0d307b97a';
+                    break;
+                case 'react':
+                    url = 'https://www.hackerrank.com/certificates/4e268088b59a';
+                    break;
+                default:
+                    alert('Certificate not found');
+                    return;
+            }
+            
+            window.open(url, '_blank');
+        }
+
+        // Navigation click handlers
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Contact form submission (no email client, just success message)
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Show success message
+            const statusDiv = document.getElementById('contact-status');
+            statusDiv.classList.remove('hidden');
+            statusDiv.className = 'mt-4 p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-lg';
+            statusDiv.innerHTML = '<p class="text-emerald-400">✅ Message Sent!</p>';
+            
+            // Reset form
+            this.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                statusDiv.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Scroll event listeners
+        window.addEventListener('scroll', () => {
+            updateActiveNav();
+            handleScrollAnimations();
+        });
+
+        // Initial load animations
+        window.addEventListener('load', () => {
+            handleScrollAnimations();
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            const isExpanded = document.getElementById('mobile-menu-btn').getAttribute('aria-expanded') === 'true';
+            
+            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            
+            if (!menu.contains(e.target) && !btn.contains(e.target) && !menu.classList.contains('hidden')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close mobile menu when clicking on menu items
+        document.querySelectorAll('#mobile-menu .nav-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Typing animation for hero section
+        let typedText = '';
+        const fullText = 'Pramila N';
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < fullText.length) {
+                typedText += fullText.charAt(charIndex);
+                document.getElementById('typed-name').textContent = typedText;
+                charIndex++;
+                setTimeout(typeWriter, 150);
+            }
+        }
+
+        // Start typing animation after a delay
+        setTimeout(typeWriter, 1000);
+
+        // Add some interactive particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            document.querySelector('.fixed.inset-0').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 2000);
+    </script>
 </body>
 </html>
