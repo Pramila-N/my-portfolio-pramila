@@ -8,7 +8,7 @@ function scrollToSection(sectionId) {
 // Download resume function
 function downloadResume() {
     const link = document.createElement('a');
-    link.href = 'https://drive.google.com/uc?export=download&id=1kni9OV2x_viZNxXh2KLRXt3NjmtnKnjV';
+    link.href = 'https://drive.google.com/uc?export=download&id=1Ec2fIcJDyBsOOiOoB8bZ9lBRO5D-LlIY';
     link.download = 'Pramila_N_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -64,7 +64,7 @@ function showCertificate(type) {
             url = 'https://drive.google.com/file/d/1m00fY9B-EFrU2uE7hlWoL96ouXNlN4Vu/view?usp=sharing';
             break;
         case 'powerbi':
-            url = 'https://drive.google.com/file/d/107g1tuGiLruIZVoVFzZy_HTK6YGyL9Af/view?usp极狐 =sharing';
+            url = 'https://drive.google.com/file/d/107g1tuGiLruIZVoVFzZy_HTK6YGyL9Af/view?usp=sharing';
             break;
         case 'frontend':
             url = 'https://drive.google.com/file/d/1lvRR292VhDMRBMB9ebSry6HaRvBMCKXw/view?usp=sharing';
@@ -76,7 +76,10 @@ function showCertificate(type) {
             url = 'https://www.hackerrank.com/certificates/41b0d307b97a';
             break;
         case 'react':
-            url = '极狐 https://www.hackerrank.com/certificates/4e268088b59a';
+            url = 'https://www.hackerrank.com/certificates/4e268088b59a';
+            break;
+        case 'additional-certificate':
+            url = 'https://drive.google.com/file/d/1F9n0DXqP7-bzm6u1Crzejf0akbxt-u24/view?usp=sharing';
             break;
         default:
             alert('Certificate not found');
@@ -130,7 +133,11 @@ window.addEventListener('load', () => {
 
 // Mobile menu toggle
 document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-    alert('Mobile menu functionality - would show/hide navigation menu');
+    const menu = document.getElementById('mobile-menu');
+    const isExpanded = document.getElementById('mobile-menu-btn').getAttribute('aria-expanded') === 'true';
+
+    menu.classList.toggle('hidden');
+    document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', (!isExpanded).toString());
 });
 
 // Typing animation for hero section
