@@ -81,6 +81,21 @@ function showCertificate(type) {
         case 'additional-certificate':
             url = 'https://drive.google.com/file/d/1F9n0DXqP7-bzm6u1Crzejf0akbxt-u24/view?usp=sharing';
             break;
+        case 'event-1':
+            url = 'https://drive.google.com/file/d/14sMT-jIfxojnXase_63S7gU8eBaN8ylH/view?usp=sharing';
+            break;
+        case 'event-2':
+            url = 'https://drive.google.com/file/d/1APNICQvr0HImc2WmWzSluJJGqoanYsxX/view?usp=sharing';
+            break;
+        case 'event-3':
+            url = 'https://drive.google.com/file/d/1U_xV_OAF9J-79K55-FHJxuFrd-CQxzxu/view?usp=sharing';
+            break;
+        case 'event-4':
+            url = 'https://drive.google.com/file/d/1J7zsUe4qC3BewaMnyAqUEnu8klUCN4Mr/view?usp=sharing';
+            break;
+        case 'event-5':
+            url = 'https://drive.google.com/file/d/1Br23K_rjACDZFdbx4IObGWawf4H7Vu3W/view?usp=sharing';
+            break;
         default:
             alert('Certificate not found');
             return;
